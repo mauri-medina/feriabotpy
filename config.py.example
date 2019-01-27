@@ -1,0 +1,11 @@
+# TWITTER CONFIG
+CONSUMER_KEY = 'abc123...'
+CONSUMER_SECRET = 'def456...'
+ACCESS_KEY = 'ghi789...'
+ACCESS_SECRET = 'kjl876...'
+
+# DATA BASE CONFIG
+DB_CONFIG = {'host': '0.0.0.0',
+             'user': 'admin',
+             'password': 'admin',
+             'database': 'some_name'}
