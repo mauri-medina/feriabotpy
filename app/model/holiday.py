@@ -21,6 +21,6 @@ def encode_holiday(h):
         str_celebration_date = None
         if h.celebration_date:
             str_celebration_date = str(h.celebration_date)
-        json_dict['celebration_day'] = str_celebration_date
+        json_dict['celebration_date'] = str_celebration_date
 
         return json_dict;

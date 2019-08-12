@@ -1,5 +1,4 @@
 from datetime import date
-from datetime import timedelta
 from app.dao import dao
 from app.model.holiday import Holiday
 
