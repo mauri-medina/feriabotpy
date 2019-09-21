@@ -32,6 +32,7 @@ def get_next_holiday() -> str:
     holiday = service.get_holiday_closest_to_date(from_date)
     return convert_holidays_to_json(holiday)
 
+
 def convert_holidays_to_json(holidays: list) -> str:
     return json.dumps(holidays, default=encode_holiday, ensure_ascii=False)
 

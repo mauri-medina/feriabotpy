@@ -20,7 +20,7 @@ def get_holiday_closest_to_date(from_date: 'date' = date.today()) -> Holiday:
             return holiday
 
     # there are no more holidays left this year,
-    # return first holiday from next year
+        # return first holiday from next year
     holidays = get_all_holidays_in_year(from_date.year + 1)
     return holidays[0]
 

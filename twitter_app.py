@@ -1,7 +1,9 @@
 from datetime import date, datetime, timedelta
-import requests
 import tweepy
 import locale
+import feriabot
+from app.model import holiday
+from app.service import service
 from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_KEY, ACCESS_SECRET
 
 
@@ -9,20 +11,13 @@ def tweet(message: str) -> None:
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
     api = tweepy.API(auth)
-    api.update_status(message)
+    # api.update_status(message)
 
     print(message)
 
 
-def get_next_holiday_from_date(from_date: date = date.today()) -> dict:
-    url = 'http://127.0.0.1:5000/feriado/proximo'
-    params = {'desde_fecha': from_date.strftime('%Y-%m-%d')}
-    response = requests.get(url, params=params)
-    return response.json()
-
-
-def str_to_date(str_date: str) -> date:
-    return datetime.strptime(str_date, '%Y-%m-%d').date()
+def get_next_holiday_from_date(from_date: date = date.today()) -> holiday:
+    return service.get_holiday_closest_to_date()
 
 
 def date_to_human(date_to_convert: date) -> str:
@@ -32,15 +27,9 @@ def date_to_human(date_to_convert: date) -> str:
         date_to_convert.strftime('%B'))  # month name
 
 
-def get_celebration_date(holiday: dict) -> date:
-    celebration_date = None
-    if holiday['celebration_date']:
-        celebration_date = str_to_date(holiday['celebration_date'])
-    return celebration_date
-
-
-def form_days_to_holiday_message(delta_days: str) -> str:
-    return """{0} {1} {2}""".format(
+def form_days_to_holiday_message(holiday_date: date) -> str:
+    delta_days = (holiday_date - date.today()).days
+    return """{0} {1} {2} para el feriado""".format(
         'Falta' if delta_days == 1 else 'Faltan',
         delta_days,
         'dia' if delta_days == 1 else 'dias',
@@ -48,39 +37,37 @@ def form_days_to_holiday_message(delta_days: str) -> str:
 
 
 def tweet_next_holiday(from_date: date) -> None:
-    holiday_json = get_next_holiday_from_date(from_date)
-    official_date = str_to_date(holiday_json['official_date'])
+    holiday = get_next_holiday_from_date(from_date)
+    official_date = holiday.official_date
 
-    celebration_date = get_celebration_date(holiday_json)
-    if holiday_json['celebration_date']:
-        celebration_date = str_to_date(holiday_json['celebration_date'])
+    celebration_date = holiday.celebration_date
 
     now = date.today()
     message = ''
 
     if official_date == now:
-        message = holiday_json['message']
+        message = holiday.message
         if celebration_date:
             message += '\nSe pasa al: ' + date_to_human(celebration_date)
-            delta_days = celebration_date - now
-            message += '\n' + form_days_to_holiday_message(delta_days.days)
+            message += '\n' + form_days_to_holiday_message(celebration_date)
             tweet(message)
         else:
             tweet(message)
             tweet_next_holiday(now + timedelta(days=1))
     elif celebration_date and celebration_date == now:
-        message = 'Hoy se celebra el feriado: ' + holiday_json['name']
-        message += '\n' + holiday_json['message']
+        message += 'Hoy se celebra el feriado: ' + holiday.name
+        message += '\n' + holiday.message
         tweet(message)
         tweet_next_holiday(now + timedelta(days=1))
     else:
-        message = 'Feriado: ' + holiday_json['name']
+        message = form_days_to_holiday_message(official_date)
+        if celebration_date:
+            message = form_days_to_holiday_message(celebration_date)
+
+        message += '\nFeriado: ' + holiday.name
         message += '\nFecha: ' + date_to_human(official_date)
-        delta_days = official_date - now
         if celebration_date:
             message += '\nSe pasa al: ' + date_to_human(celebration_date)
-            delta_days = celebration_date - now
-        message += '\n' + form_days_to_holiday_message(delta_days.days)
         tweet(message)
 
 
