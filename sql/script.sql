@@ -17,18 +17,19 @@ CREATE TABLE `holiday` (
 );
 
 INSERT INTO `holiday` VALUES
-(1,'Dia de los heroes de la patria','Feliz dia de los heroes de la patria',1,3),
-(2,'Jueves Santo','Muchas bendiciones en este jueves santo',0,0),
-(3,'Viernes Santo','Muchas bendiciones en este viernes santo',0,0),
-(4,'Pascuas','Felices pascuas',0,0),
-(5,'Dia del trabajador','Feliz dia del trabajador',1,5),
-(6,'Dia de de la independecia','Feliz dia de la independecia',14,5),
-(7,'Dia de de la independecia y Dia de la madre','Feliz dia a todas las madres!',15,5),
-(8,'Dia de de la paz del chaco','Feliz dia de la paz del chaco',12,6),
-(9,'Fundacion de Asuncion','Feliz dia de la fundacion de asuncion',15,8),
-(10,'Victoria de boqueron','Feliz dia de la victoria de Boqueron',29,9),
-(11,'Dia de la virgen de Caacupe','Feliz dia de la virgen de Caacupe',8,12),
-(12,'Navidad','Feliz navidad a todos!',25,12),(13,'Año nuevo','Feliz año nuevo',1,1);
+(1,     'Día de los heroes de la patria',               'Feliz día a los heroes de la patria'           ,1,     3),
+(2,     'Jueves Santo',                                 'Muchas bendiciones en este jueves santo'       ,0,     0),
+(3,     'Viernes Santo',                                'Muchas bendiciones en este viernes santo'      ,0,     0),
+(4,     'Pascuas',                                      '¡Felices pascuas!'                             ,0,     0),
+(5,     'Día del trabajador',                           '¡Feliz día del trabajador!'                    ,1,     5),
+(6,     'Día de de la independecia',                    '¡Feliz día de la independecia!'                ,14,    5),
+(7,     'Día de de la independecia y Dia de la madre',  '¡Feliz día a todas las madres!'                ,15,    5),
+(8,     'Día de de la paz del chaco',                   '¡Feliz día de la paz del chaco!'               ,12,    6),
+(9,     'Fundación de Asunción',                        '¡Feliz día de la fundacion de Asunción!'       ,15,    8),
+(10,    'Victoria de Boquerón',                         '¡Feliz día de la victoria de Boquerón!'        ,29,    9),
+(11,    'Día de la Virgen de Caacupé',                  '¡Feliz día de la Virgen de Caacupé!'           ,8,     12),
+(12,    'Navidad',                                      '¡Feliz navidad a todos!'                       ,25,    12),
+(13,    'Año nuevo',                                    '¡Feliz año nuevo!'                             ,1,     1);
 
 --
 -- TABLE holiday_celebration_date
