@@ -68,7 +68,7 @@ def extract_holidays_from_result(result: list) -> []:
 
 def get_registered_years() -> list:
     with UseDataBase() as cursor:
-        _SQL = """SELECT DISTINCT `year` FROM holiday.holiday_celebration_date"""
+        _SQL = """SELECT DISTINCT `year` FROM holiday_celebration_date"""
         cursor.execute(_SQL)
         result = cursor.fetchall()
 
