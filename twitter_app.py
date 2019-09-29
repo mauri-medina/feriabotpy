@@ -11,13 +11,13 @@ def tweet(message: str) -> None:
     auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
     auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
     api = tweepy.API(auth)
-    # api.update_status(message)
+    api.update_status(message)
+    # print(message)
 
-    print(message)
 
 
 def get_next_holiday_from_date(from_date: date = date.today()) -> holiday:
-    return service.get_holiday_closest_to_date()
+    return service.get_holiday_closest_to_date(from_date)
 
 
 def date_to_human(date_to_convert: date) -> str:
