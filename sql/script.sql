@@ -65,3 +65,6 @@ INSERT INTO `holiday_celebration_date` VALUES
 (12,2,9,4,2020),
 (13,3,10,4,2020),
 (14,4,12,4,2020);
+
+INSERT INTO holiday_celebration_date(holiday_id, day, month, year) values (8, 15, 6, 2020);
+INSERT INTO holiday_celebration_date(holiday_id, day, month, year) values (10, 28, 9, 2020);
