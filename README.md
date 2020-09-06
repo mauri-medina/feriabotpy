@@ -9,6 +9,7 @@ Feriabotpy is a twitter bot that tweets every day how many days are left to next
 git clone https://github.com/mauri-medina/feriabotpy.git
 pip install -r requirements.txt
 ```
+Copy file `config.py.example` into a new file `config.py` and add database and twitter credentials
 
 ## TO DO
 This is a work in progress, the final idea is to have an API where everybody could retrieve the holiday from a date range
