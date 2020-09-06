@@ -29,8 +29,7 @@ def tweet_next_holiday(from_date: date) -> None:
 
     official_date = holiday.official_date
     celebration_date = holiday.celebration_date
-    # now = datetime.now().date()
-    now = datetime.strptime('2/12/20', '%d/%m/%y').date()
+    now = datetime.now().date()
 
     # if holiday has not been moved to another day
     if not celebration_date:
