@@ -1,6 +1,6 @@
 # Feriabotpy
 Feriabotpy is a twitter bot that tweets every day how many days are left to next holiday in Paraguay.</br>
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/feriabotpy.svg?style=social&label=Follow%20%40feriabotpy)](https://twitter.com/feriabotpy)
+![Twitter Follow](https://img.shields.io/twitter/follow/feriabotpy?style=social)
 
 
 ## Installation
