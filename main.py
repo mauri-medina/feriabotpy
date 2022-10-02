@@ -39,8 +39,8 @@ def tweet(message: str) -> None:
     auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
     auth.set_access_token(ACCESS_TOKEN, SECRET_ACCESS_TOKEN)
     print(message)
-    # api = tweepy.API(auth)
-    # api.update_status(message)
+    api = tweepy.API(auth)
+    api.update_status(message)
 
 
 if __name__ == '__main__':
