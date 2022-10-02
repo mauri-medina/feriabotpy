@@ -36,10 +36,10 @@ jobs:
           SECRET_ACCESS_TOKEN: ${{ secrets.SECRET_ACCESS_TOKEN }}
         run: |
           touch config.py
-          echo API_KEY="$API_KEY" >> config.py
-          echo API_SECRET_KEY="$API_SECRET_KEY" >> config.py
-          echo ACCESS_TOKEN="$ACCESS_TOKEN" >> config.py
-          echo SECRET_ACCESS_TOKEN="$SECRET_ACCESS_TOKEN" >> config.py
+          echo API_KEY='"$API_KEY"' >> config.py
+          echo API_SECRET_KEY='"$API_SECRET_KEY"' >> config.py
+          echo ACCESS_TOKEN='"$ACCESS_TOKEN"' >> config.py
+          echo SECRET_ACCESS_TOKEN='"$SECRET_ACCESS_TOKEN"' >> config.py
 
           echo "cat config.py"
           cat config.py
