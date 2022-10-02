@@ -4,7 +4,7 @@ on:
   schedule:
     cron: '0 8 * * *'   # At 08:00 everyday
 
-    workflow_dispatch:  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:  # Allows you to run this workflow manually from the Actions tab
 
 
 jobs:
