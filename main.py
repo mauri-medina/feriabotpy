@@ -1,11 +1,12 @@
 import datetime
 import locale
+import os
 
 import tweepy
+from dotenv import load_dotenv
 
 import db
 from models import Holiday, CelebrationDate
-from config import API_KEY, API_SECRET_KEY, ACCESS_TOKEN, SECRET_ACCESS_TOKEN
 
 
 def run():
@@ -36,8 +37,8 @@ def run():
 
 
 def tweet(message: str) -> None:
-    auth = tweepy.OAuthHandler(API_KEY, API_SECRET_KEY)
-    auth.set_access_token(ACCESS_TOKEN, SECRET_ACCESS_TOKEN)
+    auth = tweepy.OAuthHandler(os.getenv('API_KEY'), os.getenv('API_SECRET_KEY'))
+    auth.set_access_token(os.getenv('ACCESS_TOKEN'), os.getenv('SECRET_ACCESS_TOKEN'))
     print(message)
     api = tweepy.API(auth)
     api.update_status(message)
@@ -46,6 +47,7 @@ def tweet(message: str) -> None:
 if __name__ == '__main__':
     # we want month and days names in spanish
     locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
+    load_dotenv()
 
     db.Base.metadata.create_all(db.engine)
     run()
