@@ -45,7 +45,7 @@ def tweet(message: str) -> None:
 
 if __name__ == '__main__':
     # we want month and days names in spanish
-    locale.setlocale(locale.LC_ALL, 'es_ES')
+    locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 
     db.Base.metadata.create_all(db.engine)
     run()
