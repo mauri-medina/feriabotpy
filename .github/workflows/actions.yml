@@ -1,9 +1,10 @@
 name: run main.py
 
 on:
-  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
   schedule:
-     - cron: '5 22 * * *'   # At 08:00 everyday
+     - cron: '20 22 * * *'   # At 08:00 everyday
+  
+  workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 jobs:
   build:
