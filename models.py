@@ -84,6 +84,9 @@ def init_db(*args, **kwargs):
     christmas = Holiday(name='Navidad', message='¡Feliz Navidad!', date=get_date(25, 12, 2022))
     db.session.add(christmas)
 
+    census_day = Holiday(name='Censo Nacional', message='Hoy se realiza el censo nacional, a quedarse todos en casa', date=get_date(9, 11, 2022))
+    db.session.add(census_day)
+
     db.session.commit()
 
     # 2022
@@ -97,6 +100,7 @@ def init_db(*args, **kwargs):
     db.session.add(CelebrationDate(holiday=chaco_peace_day, date=get_date(12, 6, 2022)))
     db.session.add(CelebrationDate(holiday=asuncion_fundation, date=get_date(15, 8, 2022)))
     db.session.add(CelebrationDate(holiday=boqueron_victory, date=get_date(3, 10, 2022)))
+    db.session.add(CelebrationDate(holiday=census_day, date=get_date(9, 11, 2022)))
     db.session.add(CelebrationDate(holiday=virgin_day, date=get_date(8, 12, 2022)))
     db.session.add(CelebrationDate(holiday=christmas, date=get_date(25, 12, 2022)))
 
