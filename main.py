@@ -28,8 +28,8 @@ def run():
 
     message += f'Feriado: {next_holiday.holiday.name}\n'
     message += """Fecha: {0} {1} de {2}""".format(
-        next_holiday.date.strftime('%A'),  # weekday
-        next_holiday.date.strftime('%d'),  # day of month
+        next_holiday.date.strftime('%A'),  # name of weekday
+        next_holiday.date.strftime('%e'),  # day of month without leading zero
         next_holiday.date.strftime('%B'),  # month name
     )
 
