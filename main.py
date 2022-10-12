@@ -22,7 +22,7 @@ def run():
     days_to_holiday = (next_holiday.date - today).days
     message = ""
     if days_to_holiday == 1:
-        message = 'Falta 1 dia para el siguiente feriado\n'
+        message = 'Mañana es Feriado! No se olviden de apagar sus alarmas\n'
     else:
         message = f'Faltan {days_to_holiday} dias para el siguiente feriado\n'
 
