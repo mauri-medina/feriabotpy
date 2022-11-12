@@ -12,6 +12,8 @@ class Holiday:
 
 def load_holidays():
     global __holidays_list
+    __holidays_list = sorted(__holidays_list, key=lambda h: h["date"])
+
     temp = []
     [temp.append(Holiday(**h)) for h in __holidays_list]
     __holidays_list = temp
