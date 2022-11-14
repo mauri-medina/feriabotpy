@@ -15,7 +15,7 @@ class Holiday:
         self.date = datetime.strptime(self.date, "%d-%m-%Y").date()
 
 
-def __get_from_json():
+def __get_from_json() -> list:
     with open(os.getenv('JSON_FILE') or "data.json") as json_file:
         data = json.load(json_file)
 
