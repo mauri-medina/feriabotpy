@@ -1,0 +1,72 @@
+[
+    {
+        "name": "Año nuevo",
+        "message": "¡Feliz año nuevo!",
+        "date": "01-01-2022"
+    },
+    {
+        "name": "Día de los heroes de la patria",
+        "message": "¡Feliz día a los heroes de la patria",
+        "date": "01-03-2022"
+    },
+    {
+        "name": "Jueves Santo",
+        "message": "¡Muchas bendiciones en este jueves santo!",
+        "date": "14-04-2022"
+    },
+    {
+        "name": "Viernes Santo",
+        "message": "¡Muchas bendiciones en este viernes santo!",
+        "date": "15-04-2022"
+    },
+    {
+        "name": "Día del trabajador",
+        "message": "¡Feliz día del trabajador!",
+        "date": "01-05-2022"
+    },
+    {
+        "name": "Día de de la independecia",
+        "message": "¡Feliz día de la Independencia!",
+        "date": "14-05-2022"
+    },
+    {
+        "name": "Día de de la independecia y Dia de la madre",
+        "message": "¡Feliz día a todas las madres!",
+        "date": "15-05-2022"
+    },
+    {
+        "name": "Día de la Paz del Chaco",
+        "message": "¡Feliz Día de la Paz del Chaco!",
+        "date": "12-06-2022"
+    },
+    {
+        "name": "Fundación de Asunción",
+        "message": "¡Feliz Día de la Fundación de Asunción!",
+        "date": "15-08-2022"
+    },
+    {
+        "name": "Victoria de Boquerón",
+        "message": "¡Feliz Día de la Victoria de Boquerón!",
+        "date": "29-09-2022"
+    },
+    {
+        "name": "Censo Nacional",
+        "message": "¡Feliz año nuevo!",
+        "date": "09-11-2022"
+    },
+    {
+        "name": "Día de la Virgen de Caacupé",
+        "message": "¡Feliz Día de la Virgen de Caacupé!",
+        "date": "08-12-2022"
+    },
+    {
+        "name": "Navidad",
+        "message": "¡Feliz Navidad!",
+        "date": "25-12-2022"
+    },
+    {
+        "name": "Año nuevo",
+        "message": "¡Feliz año nuevo!",
+        "date": "01-01-2023"
+    }
+]

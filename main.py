@@ -2,8 +2,7 @@ import datetime
 import locale
 
 from dotenv import load_dotenv
-
-from holidays import get_next_holiday, load_holidays
+from holidays import get_next_holiday
 from twitter import tweet
 
 
@@ -38,5 +37,4 @@ if __name__ == "__main__":
     # we want month and days names in spanish
     locale.setlocale(locale.LC_ALL, "es_ES.UTF-8")
     load_dotenv()
-    load_holidays()
     run()
