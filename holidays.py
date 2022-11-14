@@ -1,6 +1,5 @@
 import json
 import os
-import string
 
 from dataclasses import dataclass
 from datetime import datetime
@@ -8,9 +7,9 @@ from datetime import datetime
 
 @dataclass
 class Holiday:
-    name: string
-    message: string
-    date: string
+    name: str
+    message: str
+    date: str
 
     def __post_init__(self):
         self.date = datetime.strptime(self.date, "%d-%m-%Y").date()
@@ -19,8 +18,11 @@ class Holiday:
 def __get_from_json():
     with open(os.getenv('JSON_FILE') or "data.json") as json_file:
         data = json.load(json_file)
+
         temp = []
         [temp.append(Holiday(**i)) for i in data]
+        temp.sort(key=lambda h: h.date)
+
         return (temp)
 
 
