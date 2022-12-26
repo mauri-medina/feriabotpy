@@ -106,6 +106,7 @@ def init_db(*args, **kwargs):
 
     # 2023
     db.session.add(CelebrationDate(holiday=new_year, date=get_date(1, 1, 2023)))
+    db.session.add(CelebrationDate(holiday=heroes_day, date=get_date(1, 3, 2023)))
 
     db.session.commit()
 

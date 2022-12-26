@@ -16,7 +16,7 @@ def run():
         message = f"{next_holiday.holiday.message}"
         tweet(message)
 
-        tomorrow = today + datetime.timedelta(days=10)
+        tomorrow = today + datetime.timedelta(days=1)
         next_holiday = CelebrationDate.get_next_from_date(tomorrow)
 
     days_to_holiday = (next_holiday.date - today).days
@@ -40,8 +40,8 @@ def tweet(message: str) -> None:
     auth = tweepy.OAuthHandler(os.getenv('API_KEY'), os.getenv('API_SECRET_KEY'))
     auth.set_access_token(os.getenv('ACCESS_TOKEN'), os.getenv('SECRET_ACCESS_TOKEN'))
     print(message)
-    api = tweepy.API(auth)
-    api.update_status(message)
+    # api = tweepy.API(auth)
+    # api.update_status(message)
 
 
 if __name__ == '__main__':
