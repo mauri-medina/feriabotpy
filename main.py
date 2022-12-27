@@ -40,8 +40,8 @@ def tweet(message: str) -> None:
     auth = tweepy.OAuthHandler(os.getenv('API_KEY'), os.getenv('API_SECRET_KEY'))
     auth.set_access_token(os.getenv('ACCESS_TOKEN'), os.getenv('SECRET_ACCESS_TOKEN'))
     print(message)
-    # api = tweepy.API(auth)
-    # api.update_status(message)
+    api = tweepy.API(auth)
+    api.update_status(message)
 
 
 if __name__ == '__main__':
