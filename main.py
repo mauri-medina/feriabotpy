@@ -37,12 +37,16 @@ def run():
 
 
 def tweet(message: str) -> None:
-    auth = tweepy.OAuthHandler(os.getenv('API_KEY'), os.getenv('API_SECRET_KEY'))
-    auth.set_access_token(os.getenv('ACCESS_TOKEN'), os.getenv('SECRET_ACCESS_TOKEN'))
-    print(message)
-    api = tweepy.API(auth)
-    api.update_status(message)
+    client = tweepy.Client(
+        os.getenv('BEARER_TOKEN'),
+        os.getenv('API_KEY'),
+        os.getenv('API_SECRET_KEY'),
+        os.getenv('ACCESS_TOKEN'),
+        os.getenv('SECRET_ACCESS_TOKEN')
+    )
 
+    print(message)
+    client.create_tweet(text=message)
 
 if __name__ == '__main__':
     # we want month and days names in spanish
