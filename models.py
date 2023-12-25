@@ -119,7 +119,22 @@ def init_db(*args, **kwargs):
     db.session.add(CelebrationDate(holiday=christmas, date=get_date(25, 12, 2023)))
 
     # 2024
-    db.session.add(CelebrationDate(holiday=new_year, date=get_date(1, 1, 2023)))
+    db.session.add(CelebrationDate(holiday=new_year, date=get_date(1, 1, 2024)))
+    db.session.add(CelebrationDate(holiday=heroes_day, date=get_date(1, 3, 2024)))
+    db.session.add(CelebrationDate(holiday=holy_thursday, date=get_date(28, 3, 2024)))
+    db.session.add(CelebrationDate(holiday=holy_friday, date=get_date(29, 3, 2024)))
+    db.session.add(CelebrationDate(holiday=labor_day, date=get_date(1, 5, 2024)))
+    db.session.add(CelebrationDate(holiday=independence_day, date=get_date(14, 5, 2024)))
+    db.session.add(CelebrationDate(holiday=independence_mother_day, date=get_date(15, 5, 2024)))
+    db.session.add(CelebrationDate(holiday=independence_mother_day, date=get_date(15, 5, 2024)))
+    db.session.add(CelebrationDate(holiday=chaco_peace_day, date=get_date(10, 6, 2024)))
+    db.session.add(CelebrationDate(holiday=asuncion_fundation, date=get_date(15, 8, 2024)))
+    db.session.add(CelebrationDate(holiday=boqueron_victory, date=get_date(29, 9, 2024)))
+    db.session.add(CelebrationDate(holiday=virgin_day, date=get_date(8, 12, 2024)))
+    db.session.add(CelebrationDate(holiday=christmas, date=get_date(25, 12, 2024)))
+
+    # 2025
+    db.session.add(CelebrationDate(holiday=new_year, date=get_date(1, 1, 2025)))
 
     db.session.commit()
 
