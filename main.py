@@ -37,6 +37,10 @@ def run():
 
 
 def tweet(message: str) -> None:
+    if os.getenv('DEBUG'):
+        print(message)
+        return
+
     client = tweepy.Client(
         os.getenv('BEARER_TOKEN'),
         os.getenv('API_KEY'),
@@ -47,6 +51,7 @@ def tweet(message: str) -> None:
 
     print(message)
     client.create_tweet(text=message)
+
 
 if __name__ == '__main__':
     # we want month and days names in spanish
