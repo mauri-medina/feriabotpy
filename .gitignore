@@ -58,3 +58,6 @@ docs/_build/
 target/
 .idea/
 venv/
+
+# Environment
+.env
