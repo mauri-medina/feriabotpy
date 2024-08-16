@@ -197,7 +197,7 @@ def init_db(*args, **kwargs):
         CelebrationDate(holiday=asuncion_foundation, date=get_date(15, 8, 2024))
     )
     db.session.add(
-        CelebrationDate(holiday=boqueron_victory, date=get_date(29, 9, 2024))
+        CelebrationDate(holiday=boqueron_victory, date=get_date(30, 9, 2024))
     )
     db.session.add(CelebrationDate(holiday=virgin_day, date=get_date(8, 12, 2024)))
     db.session.add(CelebrationDate(holiday=christmas, date=get_date(25, 12, 2024)))
