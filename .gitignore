@@ -61,3 +61,6 @@ venv/
 
 # Environment
 .env
+
+# database
+*.sqlite
