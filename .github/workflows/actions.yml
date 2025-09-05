@@ -2,8 +2,8 @@ name: run main.py
 
 on:
   schedule:
-     - cron: '07 12 * * *'   # At 12:07 UTC everyday
-  
+    - cron: '07 12 * * *'   # At 12:07 UTC everyday
+
   workflow_dispatch: # Allows you to run this workflow manually from the Actions tab
 
 jobs:
@@ -31,6 +31,7 @@ jobs:
 
       - name: execute py script # run main.py
         env:
+          TZ: America/Asuncion  # Set Paraguay timezone
           API_KEY: ${{ secrets.API_KEY }}
           API_SECRET_KEY: ${{ secrets.API_SECRET_KEY }}
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
