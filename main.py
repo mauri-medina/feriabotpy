@@ -51,7 +51,10 @@ def main():
             next_holiday.date.strftime("%B"),  # month name
         )
 
-        tweet(message)
+        try:
+            tweet(message)
+        except Exception as e:
+            print(f"Error trying to post message: {e}")
 
 
 def get_next_holiday(from_date: date = datetime.now()):
@@ -76,6 +79,7 @@ def get_next_holiday(from_date: date = datetime.now()):
 
 
 def tweet(message: str) -> None:
+    print(f"Message to tweet:\n{message}")
     if os.getenv("DEBUG"):
         print(message)
         return
