@@ -81,14 +81,18 @@ def tweet(message: str) -> None:
         print(message)
         return
 
-    client = tweepy.Client(
-        twitter_bearer_token,
-        twitter_api_key,
-        twitter_api_secret_key,
-        twitter_api_access_token,
-        twitter_api_secret_access_token,
-    )
+    print("twitter_bearer_token: " + twitter_bearer_token)
+    print("twitter_api_key: " + twitter_api_key)
+    print("twitter_api_secret_key " + twitter_api_secret_key)
+    print("twitter_api_access_token: " + twitter_api_access_token)
+    print("twitter_api_secret_access_token: " + twitter_api_secret_access_token)
 
+    client = tweepy.Client(
+    consumer_key=twitter_api_key, 
+    consumer_secret=twitter_api_secret_key,
+    access_token=twitter_api_access_token, 
+    access_token_secret=twitter_api_secret_access_token
+)
     response = client.create_tweet(text=message)
     print(f"tweepy response -> {response}")
 
