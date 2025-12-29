@@ -51,10 +51,7 @@ def main():
             next_holiday.date.strftime("%B"),  # month name
         )
 
-        try:
-            tweet(message)
-        except Exception as e:
-            print(f"Error trying to post message: {e}")
+        tweet(message)
 
 
 def get_next_holiday(from_date: date = datetime.now()):
@@ -92,7 +89,8 @@ def tweet(message: str) -> None:
         twitter_api_secret_access_token,
     )
 
-    client.create_tweet(text=message)
+    response = client.create_tweet(text=message)
+    print(f"tweepy response -> {response}")
 
 
 if __name__ == "__main__":
