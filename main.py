@@ -86,15 +86,16 @@ def tweet(message: str) -> None:
     print(f"twitter_api_access_token: : |{twitter_api_access_token}|")
     print(f"twitter_api_secret_access_token: : |{twitter_api_secret_access_token}|")
 
-    client = tweepy.Client(
-    consumer_key=twitter_api_key, 
-    consumer_secret=twitter_api_secret_key,
-    access_token=twitter_api_access_token, 
-    access_token_secret=twitter_api_secret_access_token
-)
-    response = client.create_tweet(text=message)
-    print(f"tweepy response -> {response}")
+    auth = tweepy.OAuth1UserHandler(
+        twitter_api_key,
+        twitter_api_secret_key,
+        twitter_api_access_token,
+        twitter_api_secret_access_token
+    )
 
+    api = tweepy.API(auth)
+
+    api.update_status(message)
 
 if __name__ == "__main__":
     # we want month and days names in Spanish
